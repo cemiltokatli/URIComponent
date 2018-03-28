@@ -82,7 +82,7 @@ public class URIComponentTest {
     @SuppressWarnings("unchecked")
     public void testDecoding(){
         if(testDataDecode.isEmpty())
-            readTestData("EncodeTestData", testDataDecode);
+            readTestData("DecodeTestData", testDataDecode);
 
         for(int i = 1; i <= testDataDecode.size(); i+=2){
             assertEquals(testDataDecode.get(i), URIComponent.decode(testDataDecode.get(i - 1)));
