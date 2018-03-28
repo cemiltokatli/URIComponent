@@ -17,11 +17,14 @@ import java.io.File;
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class URIComponentTest {
-    private List<String> testData = new ArrayList<>();
+    private List<String> testDataEncode = new ArrayList<>();
+    private List<String> testDataDecode = new ArrayList<>();
+
 
     @BeforeAll
     public void initAll(){
-        readTestData("EncodeTestData", testData);
+        readTestData("EncodeTestData", testDataEncode);
+        readTestData("DecodeTestData", testDataDecode);
     }
 
     /**
@@ -63,11 +66,26 @@ public class URIComponentTest {
     @DisplayName("Test Encoding")
     @SuppressWarnings("unchecked")
     public void testEncoding(){
-        if(testData.isEmpty())
-            readTestData("EncodeTestData", testData);
+        if(testDataEncode.isEmpty())
+            readTestData("EncodeTestData", testDataEncode);
 
-        for(int i = 1; i <= testData.size(); i+=2){
-            assertEquals(testData.get(i), URIComponent.encode(testData.get(i - 1)));
+        for(int i = 1; i <= testDataEncode.size(); i+=2){
+            assertEquals(testDataEncode.get(i), URIComponent.encode(testDataEncode.get(i - 1)));
+        }
+    }
+
+    /**
+     * Tests the decoding operation.
+     */
+    @Test
+    @DisplayName("Test Decoding")
+    @SuppressWarnings("unchecked")
+    public void testDecoding(){
+        if(testDataDecode.isEmpty())
+            readTestData("EncodeTestData", testDataDecode);
+
+        for(int i = 1; i <= testDataDecode.size(); i+=2){
+            assertEquals(testDataDecode.get(i), URIComponent.decode(testDataDecode.get(i - 1)));
         }
     }
 }

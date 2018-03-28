@@ -1,0 +1,21 @@
+{
+  "data" : [
+    {"expected":"hello java", "actual":"hello%20java"},
+    {"expected":"~`!@#Â£â‚¬$()*^&Â°%Â§Â¥Â¢?.,<>'\";:/|[]{}=+_- ", "actual":"~%60!%40%23%C3%82%C2%A3%C3%A2%E2%80%9A%C2%AC%24()*%5E%26%C3%82%C2%B0%25%C3%82%C2%A7%C3%82%C2%A5%C3%82%C2%A2%3F.%2C%3C%3E'%22%3B%3A%2F%7C%5B%5D%7B%7D%3D%2B_-%20"},
+    {"expected":"#this is a test", "actual":"%23this%20is%20a%20test"},
+    {"expected":"#foo bar$", "actual":"%23foo%20bar%24"},
+    {"expected":"test with different chars like Ã§ÅŸÃ¶Ã¼ÄŸÄ°Ä±", "actual":"test%20with%20different%20chars%20like%20%C3%83%C2%A7%C3%85%C5%B8%C3%83%C2%B6%C3%83%C2%BC%C3%84%C5%B8%C3%84%C2%B0%C3%84%C2%B1"},
+    {"expected":"$ %20F%20@", "actual":"%24%20%2520F%2520%40"},
+    {"expected":" %20F %20 +", "actual":"%20%2520F%20%2520%20%2B"},
+    {"expected":"%40F%20F%10F", "actual":"%2540F%2520F%2510F"},
+    {"expected":" + %20 + ", "actual":"%20%2B%20%2520%20%2B%20"},
+    {"expected":"%20 %20 %20 %20F", "actual":"%2520%20%2520%20%2520%20%2520F"},
+    {"expected":"'%20F'", "actual":"'%2520F'"},
+    {"expected":"@%40@", "actual":"%40%2540%40"},
+    {"expected":" test ", "actual":"%20test%20"},
+    {"expected":"$#%23#$", "actual":"%24%23%2523%23%24"},
+    {"expected":"   %20   ", "actual":"%20%20%20%2520%20%20%20"},
+    {"expected":"^Ã¢%5E", "actual":"%5E%C3%83%C2%A2%255E"},
+    {"expected":"({foo &%26 bar})", "actual":"(%7Bfoo%20%26%2526%20bar%7D)"}
+  ]
+}
