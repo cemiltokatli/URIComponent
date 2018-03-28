@@ -1,4 +1,4 @@
-package com.cemiltokati.uricomponent;
+package com.cemiltokatli.uricomponent;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
